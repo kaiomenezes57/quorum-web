@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Welcome to Quorum</h1>
+    <p>Start creating your polls or voting.</p>
+</div>
+
+<div class="option-container">
+    <h2>Create New Poll</h2>
+    <p>Create a poll from scratch.</p>
+
+    <button type="submit">
+        Start creating
+    </button>
+</div>
+
+<div class="option-container">
+    <h2>Find Poll</h2>
+    <p>Find an existing poll to vote and predict!</p>
+
+    <input
+        type="text"
+        placeholder="paste an existing poll code or id here..."
+        [(ngModel)]="pollId"
+    >
+
+    <button (click)="findPoll()" type="submit">
+        Find
+    </button>
+</div>

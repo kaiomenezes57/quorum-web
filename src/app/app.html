@@ -1,1 +1,18 @@
-<router-outlet />
+<header class="header">
+  <div class="header__container">
+    <a class="header__logo" routerLink="/">
+      Quorum
+    </a>
+
+    <nav class="header__nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/polls/019f811a-db84-7647-ba57-f5f0a6abad06">My Polls</a>
+      <a routerLink="/">Profile</a>
+      <a routerLink="/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+  <router-outlet />
+</main>

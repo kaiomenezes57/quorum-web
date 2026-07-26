@@ -1,0 +1,12 @@
+@if (poll) {
+    <h1>{{ poll.name }}</h1>
+    <p>{{ poll.description }}</p>
+
+    @for (option of poll.options; track option.id) {
+        <p>{{ option.name }}</p>
+        <input type="checkbox">
+    }
+}
+@else {
+    <p>Trying to find poll for the given id...</p>
+}

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PollModel, PollService } from '../../services/poll/poll-service';
@@ -12,22 +12,21 @@ import { PollModel, PollService } from '../../services/poll/poll-service';
 export class Poll implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly service = inject(PollService);
+  private readonly changeDetector = inject(ChangeDetectorRef)
 
   poll?: PollModel;
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      
-      if (!id)
-        return;
+    const id = this.route.snapshot.paramMap.get('id');
 
-      this.service.getById(id).subscribe(
-        (response) => { 
-          this.poll = response;
-          console.log(response);
-        }
-      );
+    if (!id)
+      return;
+
+    this.service.getById(id).subscribe(response => {
+      this.poll = response;
+
+      // TODO: Find out why template only works with that line.
+      this.changeDetector.detectChanges();
     });
   };
 }
