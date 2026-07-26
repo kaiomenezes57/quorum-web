@@ -23,9 +23,9 @@ export interface OptionModel {
 @Service()
 export class PollService {
     private readonly httpClient = inject(HttpClient);
-    private readonly api = inject(ApiService);
+    private readonly apiService = inject(ApiService);
 
     getById(id: string): Observable<PollModel> {
-        return this.httpClient.get<PollModel>(`${this.api.baseUrl}/polls/${id}`);
+        return this.httpClient.get<PollModel>(`${this.apiService.baseUrl}/polls/${id}`);
     }
 }
