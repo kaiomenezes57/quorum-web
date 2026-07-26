@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ApiService } from '../api/api-service';
 
 export interface PollModel {
     id: string;
@@ -22,8 +23,9 @@ export interface OptionModel {
 @Service()
 export class PollService {
     private readonly httpClient = inject(HttpClient);
+    private readonly api = inject(ApiService);
 
     getById(id: string): Observable<PollModel> {
-        return this.httpClient.get<PollModel>(`http://localhost:8080/api/polls/${id}`);
+        return this.httpClient.get<PollModel>(`${this.api.baseUrl}/polls/${id}`);
     }
 }
