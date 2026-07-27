@@ -9,7 +9,7 @@
     background: linear-gradient(135deg, #4f46e5, #7c3aed);
     color: white;
     text-align: center;
-    padding: 90px 20px;
+    padding: 1px 1px;
 }
 
 .hero__content {
@@ -97,6 +97,13 @@
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.06);
     font-weight: 500;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,.12);
 }
 
 @media (max-width: 768px) {
