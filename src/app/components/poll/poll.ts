@@ -21,11 +21,11 @@ export class Poll implements OnInit {
 
     if (!id)
       return;
-
+    
     this.service.getById(id).subscribe(response => {
       this.poll = response;
 
-      // TODO: Find out why template only works with that line.
+      // TODO: Find out why the template only works with that line.
       this.changeDetector.detectChanges();
     });
   };
