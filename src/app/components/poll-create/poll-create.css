@@ -23,6 +23,10 @@
 
 /* ---------- Typography & Headers ---------- */
 
+h1 {
+    text-align: center;
+}
+
 h3 {
     font-size: 1.1rem;
     font-weight: 600;

@@ -4,21 +4,29 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-poll-create',
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule],
   templateUrl: './poll-create.html',
   styleUrl: './poll-create.css',
 })
 export class PollCreate {
   pollName = '';
   pollDescription = '';
-  voteGoal = 0;
-  
+  voteGoal = 3;
+
   options: string[] = [];
   newOptionName = '';
+  
+  checkVoteGoal(): void {
+    if (this.voteGoal >= 3)
+      return;
+
+    alert('Vote goal must be greater or equal to 3.')
+    this.voteGoal = 3;
+  }
 
   addOption(): void {
     const trimmed = this.newOptionName.trim();
-    
+
     if (!trimmed || this.options.includes(trimmed))
       return;
 

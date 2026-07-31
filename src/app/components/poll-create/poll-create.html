@@ -1,6 +1,8 @@
 <section class="container">
     <div>
 
+        <h1>Create Poll</h1>
+
         <h3>Name</h3>
         <input 
             title="Name" 
@@ -19,7 +21,8 @@
         <input 
             type="number"
             min="3"
-            placeholder="3"
+            placeholder="Insert the vote count goal..."
+            (change)="checkVoteGoal()"
             [(ngModel)]="voteGoal"
         />
 
