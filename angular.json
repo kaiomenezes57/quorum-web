@@ -63,7 +63,12 @@
               "buildTarget": "test-web:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "allowedHosts": [
+              "climate-ahoy-obstacle.ngrok-free.dev"
+            ]
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
