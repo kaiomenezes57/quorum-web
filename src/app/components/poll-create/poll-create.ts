@@ -19,13 +19,11 @@ export class PollCreate {
   addOption(): void {
     const trimmed = this.newOptionName.trim();
     
-    // Evita adicionar opções vazias ou duplicadas
-    if (!trimmed || this.options.includes(trimmed)) {
+    if (!trimmed || this.options.includes(trimmed))
       return;
-    }
 
     this.options.push(trimmed);
-    this.newOptionName = ''; // Limpa o input
+    this.newOptionName = '';
   }
 
   removeOption(index: number): void {

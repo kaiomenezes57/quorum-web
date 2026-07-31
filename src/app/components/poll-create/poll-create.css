@@ -35,33 +35,6 @@ h3:first-child {
     margin-top: 0;
 }
 
-/* ---------- Form Inputs ---------- */
-
-input {
-    width: 100%;
-    padding: 13px 16px;
-
-    font-size: 1rem;
-    color: #1f2937;
-
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-
-    transition: border-color .2s, box-shadow .2s;
-}
-
-input::placeholder {
-    color: #9ca3af;
-}
-
-input:focus {
-    outline: none;
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 4px rgba(79, 70, 229, .15);
-}
-
 /* ---------- Options List ---------- */
 
 .options-list {

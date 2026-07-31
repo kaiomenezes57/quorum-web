@@ -12,7 +12,7 @@ export class Home {
   private readonly router = inject(Router)
   pollId = '';
 
-  findPoll() {
+  findPoll(): void {
     if (!this.pollId.trim())  
       return;
     
