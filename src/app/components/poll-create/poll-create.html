@@ -1,0 +1,57 @@
+<section class="container">
+    <div>
+
+        <h3>Name</h3>
+        <input 
+            title="Name" 
+            placeholder="Type poll name here..." 
+            [(ngModel)]="pollName"
+        />
+
+        <h3>Description</h3>
+        <input 
+            title="Description" 
+            placeholder="Type poll description here..." 
+            [(ngModel)]="pollDescription"
+        />
+
+        <h3>Votes Goal</h3>
+        <input 
+            type="number"
+            min="3"
+            placeholder="3"
+            [(ngModel)]="voteGoal"
+        />
+
+        <!-- SEÇÃO DE OPÇÕES -->
+        <h3>Options</h3>
+        
+        <div class="options-list">
+            @for (option of options; track $index) {
+                <div class="option-item">
+                    <span>{{ option }}</span>
+                    <button type="button" (click)="removeOption($index)">Remove</button>
+                </div>
+            } @empty {
+                <p>No options added yet. Add at least 2 options.</p>
+            }
+        </div>
+
+        <div class="add-option-box">
+            <input 
+                type="text" 
+                placeholder="Type an option name..." 
+                [(ngModel)]="newOptionName"
+                (keyup.enter)="addOption()"
+            />
+            <button type="button" (click)="addOption()">Add Option</button>
+        </div>
+
+        <hr />
+
+        <button (click)="submit()">
+            Submit
+        </button>
+
+    </div>
+</section>
