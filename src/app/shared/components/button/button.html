@@ -1,0 +1,10 @@
+<button class="button" [disabled]="disabled() || loading()" [class]="'button ' + variant()"
+        (click)="handleClick($event)">
+        
+        @if (loading()) {
+                <span class="spinner"></span>
+                <span>loading...</span>
+        } @else {
+                {{ label() }}
+        }
+</button>
