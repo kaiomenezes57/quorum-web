@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from "@angular/router";
+import { PollService } from '../../services/poll/poll-service';
 
 @Component({
   selector: 'app-poll-create',
@@ -9,6 +10,8 @@ import { RouterLink } from "@angular/router";
   styleUrl: './poll-create.css',
 })
 export class PollCreate {
+  private readonly pollService = inject(PollService);
+
   pollName = '';
   pollDescription = '';
   voteGoal = 3;
@@ -56,7 +59,8 @@ export class PollCreate {
       options: this.options.map((name) => ({ name }))
     };
 
-    console.log('Sending payload:', payload);
-    // TODO: Chamar o PollService aqui enviando o payload para a API
+    this.pollService.post(payload);
+
+    // TODO: loading screen and error/success message.
   }
 }

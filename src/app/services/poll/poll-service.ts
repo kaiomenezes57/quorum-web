@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../api/api-service';
@@ -24,8 +24,22 @@ export interface OptionModel {
 export class PollService {
     private readonly httpClient = inject(HttpClient);
     private readonly apiService = inject(ApiService);
+    token = '';
+
+    post(payload: any): Observable<any> {
+        const url = `${this.apiService.baseUrl}/polls`;
+
+        // 1. Instância e define os headers desejados
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token}`
+        });
+
+        return this.httpClient.post<any>(url, payload, { headers });
+    }
 
     getById(id: string): Observable<PollModel> {
-        return this.httpClient.get<PollModel>(`${this.apiService.baseUrl}/polls/${id}`);
+        const url = `${this.apiService.baseUrl}/polls/${id}`
+        return this.httpClient.get<PollModel>(url);
     }
 }
