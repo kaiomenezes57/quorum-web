@@ -7,13 +7,13 @@
     <div class="options__card">
         <h2>Criar nova enquete</h2>
         <p>Crie uma nova enquete e compartilhe com seus amigos! Quem você acha que vai prever o resultado? Vamos descobrir!</p>
-        <app-button label="Criar nova enquete"></app-button>
+        <app-button label="Criar nova enquete" (click)="createNewPoll()"/>
     </div>
 
     <div class="options__card">
         <h2>Encontrar uma enquete</h2>
         <p>Procure por enquetes existentes e participe da conversa!</p>
         <app-input type="text" placeHolder="Insira o ID da enquete" (value)="setValue($event)" />
-        <app-button label="Encontrar uma enquete" (click)="submit()" />
+        <app-button label="Encontrar uma enquete" (click)="findPoll()" />
     </div>
 </section>

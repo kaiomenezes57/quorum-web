@@ -1,6 +1,5 @@
 import { Component, input, output } from '@angular/core';
 
-// Tipos para dar autocomplete e evitar erros
 export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 
 @Component({

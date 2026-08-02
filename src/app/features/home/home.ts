@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ButtonComponent } from "../../../shared/components/button/button";
-import { Input } from "../../../shared/components/input/input/input";
-import { PollService } from '../../poll/services/poll-service';
+import { ButtonComponent } from "../../shared/components/button/button";
+import { Input } from "../../shared/components/input/input";
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +17,11 @@ export class Home {
     this.pollId = value;
   }
 
-  submit(): void {
+  createNewPoll(): void {
+    this.router.navigate(['/poll/new']);
+  }
+
+  findPoll(): void {
     if (!this.pollId.trim()){
       alert('Please enter a valid poll ID');
       return;
