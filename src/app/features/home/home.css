@@ -1,9 +1,42 @@
-.presentation__text-center {
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #4f46e5;    
+    color: #ffffff;
+    
+    max-width: 1000px;
+    height: 250px;
+
+    border-radius: 20px;
+
+    margin: 20px auto;
+}
+
+.presentation h1 {
     text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.presentation p {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.presentation:hover {
+    background-color: #4338ca;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .options {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+
     max-width: 600px; 
     
     margin: 0 auto;

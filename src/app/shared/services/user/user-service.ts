@@ -21,7 +21,8 @@ export class UserService {
 
     getToken(): string {
         if (!this.user.token.trim()) {
-            throw new Error('Token is not set. Please set the token before making requests.');
+            console.warn('Token is not set. Please set the token before making requests.');
+            return '';
         }
 
         return this.user.token;

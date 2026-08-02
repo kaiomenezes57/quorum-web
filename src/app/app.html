@@ -1,24 +1,22 @@
 <header class="header">
   <div class="header__container">
-    
-    <!-- Logo -->
+
     <a href="#" class="header__logo">
       <span>Quorum</span>
     </a>
 
-    <!-- Navegação Principais -->
     <nav class="header__nav">
       <a href="#" class="header__link header__link--active">Enquetes</a>
       <a href="#" class="header__link">Minhas Criadas</a>
       <a href="#" class="header__link">Sobre</a>
     </nav>
 
-    <!-- Área de Ações (Ex: Criar Enquete / Perfil) -->
     <div class="header__actions">
-      <!-- Reutilizando a classe .submit-button do botão que criamos! -->
-      <button type="button" class="submit-button primary header__btn">
-        + Nova Enquete
-      </button>
+      @if (!userIsLoggedIn()) {
+        <app-button label="Fazer Login" />
+      } @else {
+        <app-button label="+ Nova Enquete" />
+      }
     </div>
 
   </div>

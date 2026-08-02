@@ -3,23 +3,7 @@ import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../../shared/services/api/api-service';
 import { UserService } from '../../../shared/services/user/user-service';
-
-export interface PollModel {
-    id: string;
-    userId: string;
-    name: string;
-    description: string;
-    voteGoal: number;
-    voteCount: number;
-    createdAt: string;
-    lastUpdatedAt: string;
-    options: OptionModel[];
-}
-
-export interface OptionModel {
-    id: string;
-    name: string;
-}
+import { PollModel } from '../models/poll-model';
 
 @Service()
 export class PollService {
