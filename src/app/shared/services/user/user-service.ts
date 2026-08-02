@@ -1,6 +1,6 @@
 import { Service } from '@angular/core';
 
-interface UserModel {
+export interface UserModel {
     token: string;
     refreshToken: string;
 }
@@ -14,7 +14,7 @@ export class UserService {
             throw new Error('Token cannot be empty or whitespace.');
         }
 
-        // Bypassing the check for refreshToken as it can be empty or whitespace.
+        // Bypassing refreshToken checkings as it can be empty or whitespace.
 
         this.user = user;
     }
@@ -28,5 +28,7 @@ export class UserService {
         return this.user.token;
     }
 
-    // Additional methods for refreshToken can be added here if needed.
+    getRefreshToken(): string {
+        return this.user.refreshToken;
+    }
 }
