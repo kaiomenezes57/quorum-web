@@ -12,7 +12,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 export class ButtonComponent {
   label = input<string>('Submit');
   disabled = input<boolean>(false);
-  loading = input<boolean>(true);
+  loading = input<boolean>(false);
   variant = input<ButtonVariant>('primary');
 
   clicked = output<MouseEvent>();
