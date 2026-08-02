@@ -6,17 +6,19 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ### What is Quorum Web?
 
-The project is a web client for the API that is in another repository.
+The project is a web client for the [Quorum API](https://github.com/kaiomenezes57/quorum-api).
 
 ### Architecture
 
 #### Folder structure
 
-Foi usado o padrão vertical slice para organização do projeto, onde, é separado por **features** (onde cada funcionalidade do sistema é separado por sua própria pasta contendo subpastas para agrupar seus próprios componentes, services e etc.) e **shared** (onde contém componentes, services e utilitarios compartilhados entre as features).
+The project uses the Vertical Slice Architecture pattern for organization. The application is divided into features, where each system functionality has its own dedicated folder containing its related components, services, and other internal resources.
+
+A shared folder is also used to store reusable components, services, utilities, and other resources that are common across multiple features.
 
 #### Components
 
-Foram usadas boas práticas e todos componentes são reutilizaveis e escaláveis de acordo com o crescer da aplicação!
+Best practices were followed when developing the components. All components are designed to be reusable, maintainable, and scalable, allowing the application to grow efficiently as new features are added.
 
 ## Commands and Local Testing
 
@@ -29,20 +31,6 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-### Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ### Building
 
