@@ -7,24 +7,5 @@ import { PollModel } from '../models/poll-model';
 
 @Service()
 export class PollService {
-    private readonly httpClient = inject(HttpClient);
-    private readonly apiService = inject(ApiService);
-    private readonly userService = inject(UserService);
-
-    post(payload: any): Observable<any> {
-        const url = `${this.apiService.baseUrl}/polls`;
-        const token = this.userService.getToken();
-        
-        const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        });
-
-        return this.httpClient.post<any>(url, payload, { headers });
-    }
-
-    getById(id: string): Observable<PollModel> {
-        const url = `${this.apiService.baseUrl}/polls/${id}`
-        return this.httpClient.get<PollModel>(url);
-    }
+  
 }

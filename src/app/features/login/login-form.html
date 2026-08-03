@@ -1,0 +1,16 @@
+<section class="login-form">
+    <h2>Login</h2>
+    <p>Entre com suas credenciais para acessar sua conta.</p>
+
+    <div class="login-form__group">
+        <label for="email">Email:</label>
+        <app-input type="email" id="email" (value)="setEmail($event)" />
+    </div>
+
+    <div class="login-form__group">
+        <label for="password">Senha:</label>
+        <app-input type="password" id="password" (value)="setPassword($event)" required />
+    </div>
+
+    <app-button label="Logar" [loading]="isLoading" (click)="onSubmit()" />
+</section>
